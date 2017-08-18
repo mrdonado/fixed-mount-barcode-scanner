@@ -1,7 +1,7 @@
 {
 	"name": "fixed-mount-barcode-scanner",
 	"version": "0.0.1",
-	"main": "init.js",
+	"main": "index.js",
 	"scripts": {
 		"test": "tap test/*.js"
 	},
