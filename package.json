@@ -1,0 +1,24 @@
+{
+	"name": "fixed-mount-barcode-scanner",
+	"version": "0.0.1",
+	"main": "init.js",
+	"scripts": {
+		"test": "tap test/*.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/fjrd84/fixed-mount-barcode-scanner"
+	},
+	"author": "F. Javier R. Donado <jdonado@jdonado.com> (http://www.jdonado.com/)",
+	"license": "MIT",
+	"description": "A node module to get your node module started",
+	"dependencies": {
+	},
+	"devDependencies": {
+	},
+	"keywords": [
+		"barcode",
+		"scanner"
+	]
+}
+
