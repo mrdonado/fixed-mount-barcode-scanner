@@ -12,15 +12,17 @@ const bindKeydown = () => {
  * API and the productdetails view is shown.
  */
 const checkBarcode = () => {
+  let currentBarcode;
   // When the barcode has only 12 digits, it must be trailed with a zero on the left
   if (_barcode.length === 12) {
     // The last character must be removed (it's only a control figure).
-    _productsService.scanBarcode('0' + _barcode.substring(0, _barcode.length - 1));
+    currentBarcode = '0' + _barcode.substring(0, _barcode.length - 1);
   } else if (_barcode.length === 13) {
-    _productsService.scanBarcode(_barcode.substring(0, _barcode.length - 1));
+    currentBarcode = _barcode.substring(0, _barcode.length - 1);
   }
   _barcode = '';
   _barcodeCheckTimer = null;
+  return currentBarcode;
 };
 
 /**
