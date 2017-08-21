@@ -4,17 +4,20 @@ let _barcodeCheckTimer = null;
 let _callback = null;
 
 /**
- * It binds the keydown listener to the onKeyPress function.
+ * It binds the keydown listener to the onKeyPress function (only
+ * available in the browser!)
  */
 const bindKeydown = () => {
-  document.addEventListener('keydown', e => onKeyPressed(e));
+  if (document) {
+    document.addEventListener('keydown', e => onKeyPressed(e));
+  }
 };
 
 /**
  * Bind a callback to be notified when a barcode has been scanned.
  * @param {function} cb 
  */
-const onBarcode = (cb) => {
+const setOnBarcode = (cb) => {
   _callback = cb;
 };
 
@@ -92,5 +95,5 @@ const onKeyPressed = (keyEvent) => {
 module.exports = {
   bindKeydown,
   onKeyPressed,
-  onBarcode
+  setOnBarcode
 };
