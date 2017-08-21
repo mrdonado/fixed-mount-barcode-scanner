@@ -4,6 +4,8 @@
 
 This is designed to be integrated on a frontend, where you expect a barcode scanner input.
 
+## Install the module
+
 Import it to your project with the following command:
 
 `npm install fixed-mount-barcode-scanner`
@@ -11,6 +13,8 @@ Import it to your project with the following command:
 Or if you prefer yarn to npm install:
 
 `yarn add fixed-mount-barcode-scanner` 
+
+## Integrate it in your project
 
 It can be integrated in your code like this:
 
@@ -29,3 +33,7 @@ const onBarcode = (code) => {
 // With this line, your callback will be invoked every time a barcode has been scanned
 bscanner.setOnBarcode(onBarcode);
 ```
+
+## Credits
+
+Developed by [F. Javier R. Donado](https://www.jdonado.com) for [netvico GmbH](http://www.netvico.com)
