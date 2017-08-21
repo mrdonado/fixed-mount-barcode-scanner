@@ -1,10 +1,22 @@
+// Variables global to this module
 let _barcode = '';
 let _barcodeCheckTimer = null;
+let _callback = null;
 
+/**
+ * It binds the keydown listener to the onKeyPress function.
+ */
 const bindKeydown = () => {
-  document.addEventListener('keydown', e => keyPressed(e));
+  document.addEventListener('keydown', e => onKeyPressed(e));
 };
 
+/**
+ * Bind a callback to be notified when a barcode has been scanned.
+ * @param {function} cb 
+ */
+const onBarcode = (cb) => {
+  _callback = cb;
+};
 
 /**
  * After a string has been typed, this function recognises barcodes.
@@ -22,6 +34,9 @@ const checkBarcode = () => {
   }
   _barcode = '';
   _barcodeCheckTimer = null;
+  if (_callback && currentBarcode) {
+    _callback(currentBarcode);
+  }
   return currentBarcode;
 };
 
@@ -52,7 +67,7 @@ const codeToKey = (code) => {
  * @param {any} key
  * @returns void
  */
-const keyPressed = (keyEvent) => {
+const onKeyPressed = (keyEvent) => {
   let key = '';
   if (typeof keyEvent.key !== 'undefined') {
     key = keyEvent.key;
@@ -73,3 +88,9 @@ const keyPressed = (keyEvent) => {
   }
   _barcode += key;
 }
+
+module.exports = {
+  bindKeydown,
+  onKeyPressed,
+  onBarcode
+};
