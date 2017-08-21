@@ -1,6 +1,6 @@
 {
 	"name": "fixed-mount-barcode-scanner",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"main": "bc-scanner.js",
 	"scripts": {
 		"test": "tap test/*.js"
