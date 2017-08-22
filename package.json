@@ -1,9 +1,10 @@
 {
 	"name": "fixed-mount-barcode-scanner",
-	"version": "0.0.3",
-	"main": "bc-scanner.js",
+	"version": "0.0.4",
+	"main": "bc-scanner-es5.js",
 	"scripts": {
-		"test": "tap test/*.js"
+		"test": "tap test/*.js",
+		"transpile": "babel ./bc-scanner.js --out-file ./bc-scanner-es5.js"
 	},
 	"repository": {
 		"type": "git",
@@ -13,9 +14,10 @@
 	"license": "MIT",
 	"description": "A node module to get your node module started",
 	"dependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-es2015": "^6.24.1"
 	},
-	"devDependencies": {
-	},
+	"devDependencies": {},
 	"keywords": [
 		"barcode",
 		"scanner",
@@ -24,4 +26,3 @@
 		"frontend"
 	]
 }
-
