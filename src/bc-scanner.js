@@ -22,9 +22,11 @@ const setOnBarcode = (cb) => {
 };
 
 /**
- * After a string has been typed, this function recognises barcodes.
- * When a barcode has been detected, its product is retrieved from the
- * API and the productdetails view is shown.
+ * After a string has been typed, this function will look for 12 and 13
+ * character long sequences, that will be interpreted as valid barcodes.
+ * 
+ * When a valid barcode has been detected, the callback will be notified.
+ * Otherwise, nothing will be done.
  */
 const checkBarcode = () => {
   let currentBarcode;

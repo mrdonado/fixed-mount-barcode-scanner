@@ -1,10 +1,10 @@
 {
 	"name": "fixed-mount-barcode-scanner",
 	"version": "0.0.5",
-	"main": "bc-scanner-es5.js",
+	"main": "main.js",
 	"scripts": {
 		"test": "tap test/*.js",
-		"transpile": "babel ./bc-scanner.js --out-file ./bc-scanner-es5.js"
+		"transpile": "babel ./src/bc-scanner.js --out-file ./main.js"
 	},
 	"repository": {
 		"type": "git",
